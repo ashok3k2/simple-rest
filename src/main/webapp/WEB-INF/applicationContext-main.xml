@@ -18,6 +18,7 @@
     <jaxrs:server id="restServer" address="/">
         <jaxrs:serviceBeans>
             <ref bean="userService"/>
+            <ref bean="subjectOfCareService"/>
         </jaxrs:serviceBeans>
         <jaxrs:extensionMappings>
             <entry key="json" value="application/json"/>
@@ -35,5 +36,7 @@
     <bean id="userService" class="com.myntra.simplerest.service.impl.UserServiceImpl">
         <constructor-arg ref="userRepository"/>
     </bean>
+
+    <bean id="subjectOfCareService" class="com.myntra.simplerest.service.impl.SubjectOfCareServiceImpl"/>
 
 </beans>
