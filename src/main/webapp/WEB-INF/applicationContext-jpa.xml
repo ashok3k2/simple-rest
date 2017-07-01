@@ -15,9 +15,9 @@
 
     <bean id="jdbcDataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="shutdown">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/abhinav_db"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/my_db"/>
         <property name="username" value="root"/>
-        <property name="password" value=""/>
+        <property name="password" value="1234"/>
         <property name="idleTimeout" value="200"/>
         <property name="maximumPoolSize" value="5"/>
         <property name="connectionTimeout" value="30000"/>

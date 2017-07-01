@@ -24,26 +24,25 @@ public class UserServiceImpl implements UserService {
 
     static List<User> usersList = new ArrayList<>();
     static Integer userId = 0;
-    private RabbitMsgPublisher rabbitMsgPublisher;
     private UserRepository userRepository;
     private static final String EXCHANGE = "abhinavExchange";
     private static final String ROUTING_KEY = "abhinavQueue";
 
     @Override
     public User create(User user) {
-        user.setId(userId++);
-        usersList.add(user);
-        Message message = MessageBuilder.withBody(SerializationUtils.serialize(user))
-                .setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN)
-                .setMessageId("123")
-                .setHeader("bar", "baz")
-                .setContentEncoding("string")
-                .build();
-        rabbitMsgPublisher.pushMsgToQueue(EXCHANGE, ROUTING_KEY, user);
-        UserEntity userEntity = new UserEntity();
-        //userEntity.setId(user.getId());
-        userEntity.setName(user.getName());
-        userRepository.save(userEntity);
+//        user.setId(userId++);
+//        usersList.add(user);
+//        Message message = MessageBuilder.withBody(SerializationUtils.serialize(user))
+//                .setContentType(MessageProperties.CONTENT_TYPE_TEXT_PLAIN)
+//                .setMessageId("123")
+//                .setHeader("bar", "baz")
+//                .setContentEncoding("string")
+//                .build();
+//        rabbitMsgPublisher.pushMsgToQueue(EXCHANGE, ROUTING_KEY, user);
+//        UserEntity userEntity = new UserEntity();
+//        //userEntity.setId(user.getId());
+//        userEntity.setName(user.getName());
+//        userRepository.save(userEntity);
         return user;
     }
 
@@ -55,7 +54,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User get(Integer id) {
-        return usersList.get(id);
+    	User newUser = new User();
+    	newUser.setId(1);
+    	newUser.setName("Lucky");
+        return newUser;
     }
 
     @Override

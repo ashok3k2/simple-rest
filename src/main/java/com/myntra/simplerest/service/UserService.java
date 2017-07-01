@@ -27,16 +27,16 @@ public interface UserService {
     User update(@PathParam("id") Integer id, User User);
 
     @GET
-    @Path("/{id}")
+    @Path("findById/{id}")
     @Cacheable(value="userCache")
     User get(@PathParam("id") Integer id);
 
     @GET
-    @Path("/")
+    @Path("findAll/")
     List<User> getAll();
 
     @DELETE
-    @Path("/{id}")
+    @Path("delete/{id}")
     void delete(@PathParam("id") Integer id);
 
     @GET

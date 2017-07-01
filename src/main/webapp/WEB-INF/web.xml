@@ -6,8 +6,6 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
             /WEB-INF/applicationContext-main.xml
-            /WEB-INF/applicationContext-redis.xml
-            /WEB-INF/applicationContext-rabbit.xml
             /WEB-INF/applicationContext-jpa.xml
         </param-value>
     </context-param>
